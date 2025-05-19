@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
 import authRoutes from './routes/auth.routes.js'
+import job from "./lib/cron.js";
 
 import userRoutes from "./routes/user.routes.js";
 import chatRoutes from "./routes/chat.routes.js";
@@ -15,6 +16,7 @@ import { connectDB } from "./lib/db.js";
 const app = express();
 const PORT = process.env.PORT;
 
+job.start()
 
 
 
